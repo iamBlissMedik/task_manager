@@ -1,1 +1,10 @@
-const connectionString = `mongodb+srv://<db_username>:<db_password>@test.jrjleoz.mongodb.net/?retryWrites=true&w=majority&appName=test`;
+import mongoose from "mongoose";
+const connectDB = (url) => {
+  return mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
+};
+export { connectDB };
